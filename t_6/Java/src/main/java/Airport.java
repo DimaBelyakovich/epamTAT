@@ -1,8 +1,8 @@
-import Planes.experimentalPlane;
+import planes.ExperimentalPlane;
 import models.MilitaryType;
-import Planes.MilitaryPlane;
-import Planes.PassengerPlane;
-import Planes.Plane;
+import planes.MilitaryPlane;
+import planes.PassengerPlane;
+import planes.Plane;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -46,10 +46,10 @@ public class Airport {
                 .collect(Collectors.toList());
     }
 
-    public List<experimentalPlane> getExperimentalPlanes() {
+    public List<ExperimentalPlane> getExperimentalPlanes() {
         return planes.stream()
-                .filter(plane -> plane instanceof experimentalPlane)
-                .map(plane -> (experimentalPlane) plane)
+                .filter(plane -> plane instanceof ExperimentalPlane)
+                .map(plane -> (ExperimentalPlane) plane)
                 .collect(Collectors.toList());
     }
 

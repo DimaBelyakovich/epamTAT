@@ -55,8 +55,8 @@ public class YandexMarketTest extends Assertions {
         List<WebElement> likedItems = driver.findElements(By.xpath("//article[@class='_1_IxNTwqll cia-vs cia-cs']"));
         WebElement numberOfItems = driver.findElement(By.xpath("//span[@class='mSwwwbBehQ']"));
 
-        Assert.assertTrue(parseInt(numberOfItems.getText()) == likedItems.size());
-
+        int expectedResult = parseInt(numberOfItems.getText());
+        Assert.assertEquals(expectedResult, likedItems.size());
     }
 
 
