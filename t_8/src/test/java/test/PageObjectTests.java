@@ -2,11 +2,11 @@ package test;
 
 import org.apache.tools.ant.types.Assertions;
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import page.*;
 
 import java.util.ArrayList;
@@ -32,7 +32,6 @@ public class PageObjectTests extends Assertions {
 
     @Test
     public void testNumComparedItems() {
-        setUp();
         List<AbstractPage> comparedItems = new ArrayList<>();
 
         CategoryPage addedItemFromList = new CategoryPage(driver)
@@ -49,7 +48,6 @@ public class PageObjectTests extends Assertions {
 
         int expectedResult = comparedItems.size();
         Assert.assertEquals(expectedResult, comparisonPage.getNumOfAddedItems());
-        tearDown();
     }
 
     @Test
@@ -75,7 +73,5 @@ public class PageObjectTests extends Assertions {
             isCategoryContains = st.contains(searchedCategory.toLowerCase()) ? true : false;
         }
         Assert.assertTrue(isCategoryContains);
-
-        tearDown();
     }
 }
