@@ -5,9 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractPage {
-    protected final Duration WAIT_TIMEOUT_SECONDS = Duration.ofSeconds(10);
+    protected final long WAIT_TIMEOUT_SECONDS = 15;
     protected WebDriver driver;
 
     protected AbstractPage(WebDriver driver) {
@@ -16,13 +17,8 @@ public abstract class AbstractPage {
     }
 
     public AbstractPage sleep() {
-        try{
-            Thread.sleep(WAIT_TIMEOUT_SECONDS.toMillis());
-            return this;
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            return this;
-        }
+        driver.manage().timeouts().implicitlyWait(WAIT_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+        return this;
     }
 
     public abstract AbstractPage openPage(String url);

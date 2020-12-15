@@ -55,23 +55,24 @@ public class PageObjectTests extends Assertions {
         final String searchedBrand = "Samsung";
         final String searchedCategory = "ноутбук";
 
-        setUp();
         MainPage mainPage = new MainPage(driver)
                                 .openPage("https://market.yandex.by/?lr=0&rtr=157")
                                 .search(searchedBrand.toLowerCase());
-        boolean isBrandContains = false;
-        for (String st: mainPage.searchResultBrand()) {
-            isBrandContains = st.contains(searchedBrand.toLowerCase()) ? true : false;
-        }
+        boolean isBrandContains = findContains(mainPage.searchResultBrand(), searchedBrand);
         Assert.assertTrue(isBrandContains);
 
 
         mainPage.openPage("https://market.yandex.by/?lr=0&rtr=157")
                 .search(searchedCategory.toLowerCase());
-        boolean isCategoryContains = false;
-        for (String st: mainPage.searchResultCategory()) {
-            isCategoryContains = st.contains(searchedCategory.toLowerCase()) ? true : false;
-        }
+        boolean isCategoryContains = findContains(mainPage.searchResultCategory(), searchedCategory);
         Assert.assertTrue(isCategoryContains);
+    }
+
+    private boolean findContains(List<String> findsList, String searchedString){
+        boolean contains = false;
+        for (String st: findsList) {
+            contains = st.contains(searchedString.toLowerCase()) ? true : false;
+        }
+        return contains;
     }
 }

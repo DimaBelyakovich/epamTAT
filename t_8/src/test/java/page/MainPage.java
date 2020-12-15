@@ -42,6 +42,7 @@ public class MainPage extends AbstractPage {
 
     @Override
     public MainPage openPage(String url) {
+        sleep();
         driver.get(url);
         return this;
     }
