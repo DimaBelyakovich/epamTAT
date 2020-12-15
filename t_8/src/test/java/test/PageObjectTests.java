@@ -11,7 +11,6 @@ import page.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 
@@ -73,7 +72,7 @@ public class PageObjectTests extends Assertions {
                 .search(searchedCategory.toLowerCase());
         boolean isCategoryContains = false;
         for (String st: mainPage.searchResultCategory()) {
-            isCategoryContains = st.contains(searchedCategory.toLowerCase(Locale.ROOT)) ? true : false;
+            isCategoryContains = st.contains(searchedCategory.toLowerCase()) ? true : false;
         }
         Assert.assertTrue(isCategoryContains);
 
