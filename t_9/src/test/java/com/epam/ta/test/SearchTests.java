@@ -22,7 +22,7 @@ public class SearchTests extends CommonConditions{
         boolean isBrandContains = FindContains.findContains(mainPage.searchResultBrand(), searchedBrand);
         Assert.assertTrue(isBrandContains);
 
-        mainPage.openPage("https://market.yandex.by/?lr=0&rtr=157")
+        mainPage.openPage()
                 .search(searchedCategory.toLowerCase());
         boolean isCategoryContains = FindContains.findContains(mainPage.searchResultCategory(), searchedCategory);
         Assert.assertTrue(isCategoryContains);
