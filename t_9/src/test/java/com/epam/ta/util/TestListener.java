@@ -40,7 +40,7 @@ public class TestListener implements ITestListener {
     }
 
     public void onStart(ITestContext iTestContext) {
-
+        saveScreenshot();
     }
 
     public void onFinish(ITestContext iTestContext) {
