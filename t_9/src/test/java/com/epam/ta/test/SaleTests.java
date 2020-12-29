@@ -14,7 +14,7 @@ public class SaleTests extends CommonConditions{
 
     @Test
     public void TheMostProfitableDiscountTest(){
-        int numTheMostDiscount = 7;
+        int numTheMostDiscount = 6;
         SalePage salePage = new MainPage(driver)
                                 .openPage()
                                 .setupLocation("Москва")

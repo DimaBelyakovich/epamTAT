@@ -68,7 +68,9 @@ public class MainPage extends AbstractPage {
 
     public MainPage search(String searchLine){
         searchLineInput.sendKeys(searchLine);
+        logger.info("search line sent");
         searchButton.click();
+        CustomWaits.waitForPageLoaded(driver);
         return this;
     }
 
