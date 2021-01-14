@@ -15,6 +15,22 @@ abstract public class Plane {
         this.maxLoadCapacity = maxLoadCapacity;
     }
 
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    public void setMaxFlightDistance(int maxFlightDistance) {
+        this.maxFlightDistance = maxFlightDistance;
+    }
+
+    public void setMaxLoadCapacity(int maxLoadCapacity) {
+        this.maxLoadCapacity = maxLoadCapacity;
+    }
+
     public String getModel() {
         return model;
     }

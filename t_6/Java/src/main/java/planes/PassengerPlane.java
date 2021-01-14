@@ -1,6 +1,7 @@
 package planes;
 
 import java.util.Objects;
+import java.util.StringJoiner;
 
 public class PassengerPlane extends Plane{
     private int passengersCapacity;
@@ -10,15 +11,20 @@ public class PassengerPlane extends Plane{
         this.passengersCapacity = passengersCapacity;
     }
 
+    public void setPassengersCapacity(int passengersCapacity) {
+        this.passengersCapacity = passengersCapacity;
+    }
+
     public int getPassengersCapacity() {
         return passengersCapacity;
     }
 
     @Override
     public String toString() {
-        return super.toString().replace("}",
-                ", passengersCapacity=" + passengersCapacity +
-                '}');
+        return new StringJoiner(", ", PassengerPlane.class.getSimpleName() + "[", "]")
+                .add("passengersCapacity=" + passengersCapacity)
+                .add("model='" + model + "'")
+                .toString();
     }
 
     @Override
