@@ -19,29 +19,29 @@ public class ComparisonTest extends CommonConditions{
     private static final String CATEGORY_NAME1 = "testdata.category.name1";
     private static final String PAGE_NAME = "Сравнение товаров";
 
-//    @Test
-//    public void comparisonOneTypeWithoutAuthorizationTest() throws UnsupportedEncodingException {
-//        String city = TestDataReader.getTestDataRus(LOCATION_PROPERTY);
-//        String type = TestDataReader.getTestDataRus(CATEGORY_TYPE1);
-//        String name = TestDataReader.getTestDataRus(CATEGORY_NAME1);
-//        LinkedList<Item> addedItems = new LinkedList<>();
-//
-//        ComparisonPage comparisonPage = new MainPage(driver)
-//                                    .openPage()
-//                                    .setupCity(city)
-//                                    .closePopUp()
-//                                    .goToCategory(type, name)
-//                                    .createItemList()
-//                                    .addToComparison(1, addedItems)
-//                                    .goToItem(2)
-//                                    .creatItem()
-//                                    .addToComparison(addedItems)
-//                                    .goToComparisonPageFromPopUp()
-//                                    .createItemsList();
-//
-//        assertThat(comparisonPage.getPageTitle(), is(equalTo(PAGE_NAME)));
-//        assertThat(comparisonPage.getItems(), is(equalTo(addedItems)));
-//    }
+    @Test
+    public void comparisonOneTypeWithoutAuthorizationTest() throws UnsupportedEncodingException {
+        String city = TestDataReader.getTestDataRus(LOCATION_PROPERTY);
+        String type = TestDataReader.getTestDataRus(CATEGORY_TYPE1);
+        String name = TestDataReader.getTestDataRus(CATEGORY_NAME1);
+        LinkedList<Item> addedItems = new LinkedList<>();
+
+        ComparisonPage comparisonPage = new MainPage(driver)
+                                    .openPage()
+                                    .setupCity(city)
+                                    .closePopUp()
+                                    .goToCategory(type, name)
+                                    .createItemList()
+                                    .addToComparison(1, addedItems)
+                                    .goToItem(2)
+                                    .creatItem()
+                                    .addToComparison(addedItems)
+                                    .goToComparisonPageFromPopUp()
+                                    .createItemsList();
+
+        assertThat(comparisonPage.getPageTitle(), is(equalTo(PAGE_NAME)));
+        assertThat(comparisonPage.getItems(), is(equalTo(addedItems)));
+    }
 
     private static final String CATEGORY_TYPE2 = "testdata.category.type2";
     private static final String CATEGORY_NAME2 = "testdata.category.name2";
