@@ -17,6 +17,9 @@ public class ComparisonPage extends MainPage{
     @FindBy(xpath = "//div[@class='_2itQJaiEj2']")
     private WebElement pageTitle;
 
+    @FindBy(xpath = "//div[@class='_1bLIgtxyLj']")
+    private List<WebElement> comparedCategories;
+
     private List<Item> itemsOnPage;
 
     public ComparisonPage(WebDriver driver) {
@@ -41,5 +44,10 @@ public class ComparisonPage extends MainPage{
 
     public List<Item> getItems(){
         return this.itemsOnPage;
+    }
+
+    public ComparisonPage changeComparedList(){
+        comparedCategories.get(1).click();
+        return new ComparisonPage(driver);
     }
 }

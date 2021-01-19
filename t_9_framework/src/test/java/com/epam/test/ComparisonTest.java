@@ -61,16 +61,21 @@ public class ComparisonTest extends CommonConditions{
                                     .closePopUp()
                                     .goToCategory(type1, name1)
                                     .createItemList()
-                                    .addToComparison(1, addedItemsFirstCategory)
-                                    .addToComparison(10, addedItemsFirstCategory)
+                                    .addToComparison(2, addedItemsFirstCategory)
+                                    .addToComparison(5, addedItemsFirstCategory)
                                     .closePopUp()
                                     .goToCategory(type2, name2)
                                     .createItemList()
                                     .addToComparison(2, addedItemsSecondCategory)
                                     .addToComparison(5, addedItemsSecondCategory)
-                                    .goToComparisonPageFromPopUp();
+                                    .goToComparisonPageFromPopUp()
+                                    .createItemsList();
 
         assertThat(comparisonPage.getPageTitle(), is(equalTo(PAGE_NAME)));
+        assertThat(comparisonPage.getItems(), is(equalTo(addedItemsSecondCategory)));
 
+        comparisonPage = comparisonPage.changeComparedList()
+                                       .createItemsList();
+        assertThat(comparisonPage.getItems(), is(equalTo(addedItemsFirstCategory)));
     }
 }
